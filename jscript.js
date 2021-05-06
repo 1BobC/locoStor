@@ -30,16 +30,30 @@
 // name1= localStorage.getItem('name1');
 // age1= localStorage.getItem('age1');
 
-console.log(name1, age1);
-document.getElementById("bob3").innerHTML= "The local storage updated is: " + name1 + " " + age1;
+// console.log(name1, age1);
+// document.getElementById("bob3").innerHTML= "The local storage updated is: " + name1 + " " + age1;
 
 //deleting locally stored data #112. Deleting Storage Data
 //localStorage.removeItem('name1');
-localStorage.clear();
+//localStorage.clear();
 
-name1= localStorage.getItem('name1');
-age1= localStorage.getItem('age1');
-console.log(name1, age1);
-document.getElementById("bob4").innerHTML= "The local storage cleared is: " + name1 + " " + age1;
+// name1= localStorage.getItem('name1');
+// age1= localStorage.getItem('age1');
+// console.log(name1, age1);
+// document.getElementById("bob4").innerHTML= "The local storage cleared is: " + name1 + " " + age1;
 
 //#113. Stringifying & Parsing Data
+const todos= [
+    {text:'make pizza', author: 'shaun'},
+    {text:'make pizza dough', author: 'mario'},
+    {text:'make pizza filling', author: 'luigi'}
+];
+
+    // console.log(JSON.stringify(todos));
+    // document.getElementById("bob5").innerHTML= JSON.stringify(todos);
+
+    localStorage.setItem('todos', JSON.stringify(todos)); //turns array into a string
+
+    const stored= localStorage.getItem('todos');
+    console.log(JSON.parse(stored));                       //turn string back into array! 
+    document.getElementById("bob5").innerHTML= JSON.parse(stored);
